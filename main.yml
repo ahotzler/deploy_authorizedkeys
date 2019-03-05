@@ -1,0 +1,14 @@
+---
+
+- hosts: testservers
+  remote_user: admin
+  vars_files:
+    - keys.yml
+ 
+  tasks:
+
+  - name: Deploy SSH-Keys to remote host
+    authorized_key:
+      user: admin
+      key: "{{ devops|map(attribute='sshkey')|join('\n') }}"
+      exclusive: true

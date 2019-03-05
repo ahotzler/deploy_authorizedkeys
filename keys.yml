@@ -1,0 +1,9 @@
+---
+
+devops:
+  - name: Devop3
+    sshkey: ssh-rsa AAAAB....
+  - name: DevOp2
+    sshkey: ssh-rsa AAAABC...
+  - name: Devop3
+    sshkey: ssh-rsa AAAABD...
