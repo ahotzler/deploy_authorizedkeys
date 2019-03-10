@@ -1,0 +1,5 @@
+---
+
+keystodeploy:
+  - name: Horst Meier
+    sshkey: ssh-rsa AAAABD...

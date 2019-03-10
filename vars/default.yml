@@ -1,0 +1,7 @@
+---
+
+keystodeploy:
+  - name: Petra Meier
+    sshkey: ssh-rsa AAAABCe233e423...
+  - name: Horst Lehmann
+    sshkey: ssh-rsa AAAABDdsds...

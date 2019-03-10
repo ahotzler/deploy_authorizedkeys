@@ -1,14 +1,20 @@
 ---
 
-- hosts: testservers
-  remote_user: admin
-  vars_files:
-    - keys.yml
+- hosts: testfileservers
+  remote_user: devopuser
  
   tasks:
 
+  - name: Read variables
+    include_vars: '{{ item }}'
+    with_first_found:
+      - files:
+          - "{{ inventory_hostname }}.yml"
+          - "default.yml"
+        paths: "./vars/"
+
   - name: Deploy SSH-Keys to remote host
     authorized_key:
-      user: admin
-      key: "{{ devops|map(attribute='sshkey')|join('\n') }}"
+      user: hotzi4
+      key: "{{ keystodeploy|map(attribute='sshkey')|join('\n') }}"
       exclusive: true
