@@ -15,6 +15,6 @@
 
   - name: Deploy SSH-Keys to remote host
     authorized_key:
-      user: functionuser
+      user: functionaccount
       key: "{{ keystodeploy|map(attribute='sshkey')|join('\n') }}"
       exclusive: true
